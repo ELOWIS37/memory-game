@@ -58,6 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let cardsChosen = []
   let cardsChosenId = []
   let cardsWon = []
+  // Exercici 3 - Variables vides
+  var nVides= 4
+  var vides = document.getElementById("vides")
+  vides.innerHTML = nVides
   // Exercici 1 - Cambiar color 
   var tauler = document.getElementById('tauler')
   tauler.addEventListener('mouseenter', ratoliSobre)
@@ -90,6 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
       alert('You have clicked the same image!')
+
+      // Exercici 3 - Restar vides
+      nVides--
+      vides.innerHTML = nVides
     }
     else if (cardsChosen[0] === cardsChosen[1]) {
       alert('You found a match')
@@ -102,10 +110,18 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
       alert('Sorry, try again')
+      // Exercici 3 - Restar vides
+      nVides--
+      vides.innerHTML = nVides
     }
     //Exercici 2 - Eliminar el nom
-    borrarNom(); 
+    borrarNom();
 
+    // Exercici 3 - Si el contador de vides es = 0 has perdut
+    if (nVides == 0){
+      alert ("Has perdut Eloy Castaño Molina!")
+      window.location.reload();
+    } 
     cardsChosen = []
     cardsChosenId = []
     resultDisplay.textContent = cardsWon.length
@@ -134,8 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //Exercici 2 - Mostrar el nom
     posarNom(cardArray[cardId].name)
   }
-  
-  
   createBoard()
 })
 

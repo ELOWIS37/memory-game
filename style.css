@@ -4,3 +4,12 @@
   width: 400px;
   height: 300px;
 }
+#styleScore{
+  display: inline-block;
+}
+#styleVida{
+  margin-left: 260px;
+  display: inline-block;
+}
+
+
