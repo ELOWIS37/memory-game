@@ -103,12 +103,23 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
       alert('Sorry, try again')
     }
+    //Exercici 2 - Eliminar el nom
+    borrarNom(); 
+
     cardsChosen = []
     cardsChosenId = []
     resultDisplay.textContent = cardsWon.length
     if  (cardsWon.length === cardArray.length/2) {
       resultDisplay.textContent = 'Congratulations! You found them all!'
     }
+  }
+  //Exercici 2 - Funcions posar i borrar el nom
+  function posarNom(nomDeLaImatge){
+    console.log(nomDeLaImatge);
+    document.getElementById("nomDeLaImatge").innerHTML=(nomDeLaImatge);
+  }
+  function borrarNom(){
+  document.getElementById("nomDeLaImatge").innerHTML=("");
   }
 
   //flip your card
@@ -120,7 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cardsChosen.length ===2) {
       setTimeout(checkForMatch, 500)
     }
+    //Exercici 2 - Mostrar el nom
+    posarNom(cardArray[cardId].name)
   }
-
+  
+  
   createBoard()
 })
+
+
