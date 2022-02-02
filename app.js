@@ -58,7 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
   let cardsChosen = []
   let cardsChosenId = []
   let cardsWon = []
+  // Exercici 1 - Cambiar color 
+  var tauler = document.getElementById('tauler')
+  tauler.addEventListener('mouseenter', ratoliSobre)
+  tauler.addEventListener('mouseleave', ratoliFora)
 
+  function ratoliSobre() {
+      document.getElementById('result').style.color = 'blue';
+  } 
+  function ratoliFora() {
+    document.getElementById('result').style.color = 'green';
+  }
   //create your board
   function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
