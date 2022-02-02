@@ -61,6 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Exercici 3 - Variables vides
   var nVides= 4
   var vides = document.getElementById("vides")
+  // Exercici 4
+  var nAccions = 0
+  var accions = document.getElementById("accio")
   vides.innerHTML = nVides
   // Exercici 1 - Cambiar color 
   var tauler = document.getElementById('tauler')
@@ -94,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
       alert('You have clicked the same image!')
-
+      
       // Exercici 3 - Restar vides
       nVides--
       vides.innerHTML = nVides
